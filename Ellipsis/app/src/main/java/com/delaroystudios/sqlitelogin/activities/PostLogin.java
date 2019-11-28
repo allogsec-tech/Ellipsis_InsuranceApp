@@ -136,6 +136,7 @@ public class PostLogin extends AppCompatActivity {
     }
 
     private void addDetails(){
+        Bundle extras = getIntent().getExtras();
 
         appID = appIDET.getText().toString();
         custName = custNameET.getText().toString();
@@ -143,14 +144,21 @@ public class PostLogin extends AppCompatActivity {
         customer.setApp(appID);
         customer.setName(custName);
         customer.setDocument(doc);
+        String userEmail = extras.getString("EMAIL");
+        System.out.println(userEmail);
+        System.out.println("++++++++++++++++++++++++++++++++++++==================================================");
+
 //        String useremail = mlogin.sendEmail();
+//        System.out.println(useremail);
+//        System.out.println("++++++++++++++++++++++++++++++++++++==================================================");
 //        user.setEmail(useremail);
+
 
         System.out.println(appID);
         System.out.println(custName);
         System.out.println(doc);
 
-        databaseHelper.addCustomerDetails(customer);
+        databaseHelper.addCustomerDetails(customer, userEmail);
     }
 
     private void fileIntent() {

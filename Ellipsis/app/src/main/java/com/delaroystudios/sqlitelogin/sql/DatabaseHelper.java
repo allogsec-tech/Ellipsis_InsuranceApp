@@ -49,7 +49,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper{
 
     private String CREATE_CUSTOMER_TABLE = "CREATE TABLE " + TABLE_CUSTOMER + "("
             + COLUMN_CUSTOMER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_CUSTOMER_APPID + " TEXT,"
-            + COLUMN_CUSTOMER_NAME + " TEXT," + COLUMN_CUSTOMER_DOCUMENT + " TEXT" + ")";
+            + COLUMN_CUSTOMER_NAME + " TEXT," + COLUMN_CUSTOMER_DOCUMENT + " TEXT," + COlUMN_STAFF + " TEXT" + ")";
 
 
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
@@ -87,7 +87,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper{
         db.close();
     }
 
-    public void addCustomerDetails(Customer customer){
+    public void addCustomerDetails(Customer customer, String userEmail){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         System.out.println(customer.getApp());
@@ -96,6 +96,26 @@ public class DatabaseHelper  extends SQLiteOpenHelper{
         values.put(COLUMN_CUSTOMER_APPID, customer.getApp());
         values.put(COLUMN_CUSTOMER_NAME, customer.getName());
         values.put(COLUMN_CUSTOMER_DOCUMENT, customer.getDocument());
+
+
+        String staffID = null;
+        SQLiteDatabase dbdummy = this.getWritableDatabase();
+        String query = "SELECT user_id FROM user WHERE user_email ='"+userEmail+"'";
+        Cursor  cursor = db.rawQuery(query,null);
+        if (cursor.moveToFirst()) {
+
+
+            staffID =  cursor.getString(cursor.getColumnIndex("user_id"));
+
+        }
+        System.out.println(staffID);
+        System.out.println("++++++++++++++++++++++++++++=================================");
+
+        values.put(COlUMN_STAFF, staffID);
+
+
+
+
 
         long abc = db.insert(TABLE_CUSTOMER, null, values);
         if(abc!=-1){
