@@ -54,9 +54,6 @@ public class PostLoginManager extends AppCompatActivity {
         System.out.println(managerEmail);
         initObjects();
         abc();
-        managerEmail = user.getEmail();
-        System.out.println(managerEmail);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 
 }
@@ -66,13 +63,22 @@ private void initObjects(){
     user = new User();
 }
 private void abc(){
+    Bundle extras = getIntent().getExtras();
 
-//    List<String> staffIDs = new ArrayList<>();
-//    staffIDs = databaseHelper.staffIDs(managerEmail);
+
+    String userEmail = extras.getString("EMAIL");
+    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==============================");
+    System.out.println(userEmail);
+    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==============================");
+
+    List<String> staffIDs = new ArrayList<>();
+    staffIDs = databaseHelper.staffIDs(userEmail);
+    System.out.println(staffIDs);
+    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==============================");
 
     List<String> list=new ArrayList<>();
 
-    list = databaseHelper.getCustomerDetails();
+    list = databaseHelper.getCustomerDetails(staffIDs);
     System.out.println(customer.getApp());
     System.out.println("========================================");
 

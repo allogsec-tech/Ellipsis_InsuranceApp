@@ -120,12 +120,18 @@ public class PostLogin extends AppCompatActivity {
     }
 
     private void email() {
+        Bundle extras = getIntent().getExtras();
+
         appID = appIDET.getText().toString();
         custName = custNameET.getText().toString();
         doc = docET.getText().toString();
         Intent intent = new Intent(Intent.ACTION_SEND);
+
+        String staffEmail = extras.getString("EMAIL");
+        String managerEmail = databaseHelper.getManagerEmail(staffEmail);
+
         intent.setType("image/png");
-        String to[] = {"karthikmudaliar13@gmail.com"};
+        String to[] = {managerEmail};
         intent.putExtra(Intent.EXTRA_EMAIL, to);
         intent.putExtra(Intent.EXTRA_SUBJECT, appID + "-" + custName);
         intent.putExtra(Intent.EXTRA_TEXT, "This " + doc + " belongs to " + custName + " whose application ID is " + appID);

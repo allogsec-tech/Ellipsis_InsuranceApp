@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.delaroystudios.sqlitelogin.R;
 import com.delaroystudios.sqlitelogin.helper.InputValidation;
@@ -134,6 +133,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             else if (userPost.equals(postManager)){
                 Intent managerLogin = new Intent(activity, PostLoginManager.class);
+                managerLogin.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
                 startActivity(managerLogin);
 //                Toast.makeText(activity, "Sorry You are Manager", Toast.LENGTH_SHORT).show();
 
@@ -152,4 +152,12 @@ public class LoginActivity extends AppCompatActivity {
         useremail = textInputEditTextEmail.getText().toString().trim();
         return useremail;
     }
+
+    public void onBackPressed(){
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+    }
+
 }

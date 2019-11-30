@@ -167,10 +167,29 @@ public class DatabaseHelper  extends SQLiteOpenHelper{
         return abc;
     }
 
-    public List getCustomerDetails() {
+    public String getManagerEmail(String staffEmail){
+        String managerEmail = null;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT user_workingunder FROM user WHERE user_email ='"+staffEmail+"'";
+
+        Cursor  cursor = db.rawQuery(query,null);
+
+        if (cursor.moveToFirst()) {
 
 
-        String selectQuery = "SELECT customer_app,customer_name,customer_document FROM customer";
+            managerEmail =  cursor.getString(cursor.getColumnIndex("user_workingunder"));
+            System.out.println(managerEmail);
+
+        }
+        return managerEmail;
+
+    }
+
+    public List getCustomerDetails(List staffIDs) {
+
+        String roundStaffIDs = staffIDs.toString().replace("[","(").replace("]",")");
+        String selectQuery = "SELECT customer_app,customer_name,customer_document FROM customer WHERE staff_id IN "+roundStaffIDs ;
         SQLiteDatabase db  = this.getReadableDatabase();
         Cursor cursor      = db.rawQuery(selectQuery, null);
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -218,6 +237,9 @@ public class DatabaseHelper  extends SQLiteOpenHelper{
     public List staffIDs(String managerEmail){
         List<String> staffIDs = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(managerEmail);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         String query = "SELECT user_id FROM user WHERE user_workingunder ='"+managerEmail+"'";
         Cursor  cursor = db.rawQuery(query,null);
 
