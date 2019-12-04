@@ -4,11 +4,15 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +35,7 @@ public class PostLoginManager extends AppCompatActivity {
     TextView appID;
     TextView name;
     TextView document;
+    TextView tv2;
     Button signOut;
 
     private String managerEmail;
@@ -40,9 +45,10 @@ public class PostLoginManager extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_login_manager);
 
-        appID = (TextView)findViewById(R.id.txtApplicationID1);
-        name = (TextView)findViewById(R.id.txtName1);
-        document = (TextView)findViewById(R.id.Document1);
+//        appID = (TextView)findViewById(R.id.txtApplicationID1);
+//        name = (TextView)findViewById(R.id.txtName1);
+//        document = (TextView)findViewById(R.id.Document1);
+          tv2 = (TextView)findViewById(R.id.tv2);
         signOut = (Button)findViewById(R.id.signOut);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +76,7 @@ private void abc(){
     System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==============================");
     System.out.println(userEmail);
     System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==============================");
+    tv2.setText("Welcome "+userEmail);
 
     List<String> staffIDs = new ArrayList<>();
     staffIDs = databaseHelper.staffIDs(userEmail);
@@ -82,14 +89,62 @@ private void abc(){
     System.out.println(customer.getApp());
     System.out.println("========================================");
 
-    for (int i=0; i<list.size(); i=i+3) {
+//    for (int i=0; i<list.size(); i=i+3) {
+//
+//        appID.setText(list.get(i));
+//        name.setText(list.get(i+1));
+//        document.setText(list.get(i+2));
+//    }
 
-        appID.setText(list.get(i));
-        name.setText(list.get(i+1));
-        document.setText(list.get(i+2));
+
+    TableLayout stk = (TableLayout) findViewById(R.id.table_main);
+    TableRow tbrow0 = new TableRow(this);
+//    TextView tv0 = new TextView(this);
+//    tv0.setText(" Sl.No ");
+//    tv0.setTextColor(Color.WHITE);
+//    tbrow0.addView(tv0);
+    TextView tv1 = new TextView(this);
+    tv1.setText(" Application ID ");
+    tv1.setTextColor(Color.WHITE);
+    tbrow0.addView(tv1);
+    TextView tv2 = new TextView(this);
+    tv2.setText(" Customer Name ");
+    tv2.setTextColor(Color.WHITE);
+    tbrow0.addView(tv2);
+    TextView tv3 = new TextView(this);
+    tv3.setText(" Document ");
+    tv3.setTextColor(Color.WHITE);
+    tbrow0.addView(tv3);
+    stk.addView(tbrow0);
+    for (int i = 0; i < list.size(); i=i+3) {
+        TableRow tbrow = new TableRow(this);
+//        TextView t1v = new TextView(this);
+//        t1v.setText("" + i);
+//        t1v.setTextColor(Color.WHITE);
+//        t1v.setGravity(Gravity.CENTER);
+//        tbrow.addView(t1v);
+        TextView t2v = new TextView(this);
+        t2v.setText(list.get(i));
+        t2v.setTextColor(Color.WHITE);
+        t2v.setGravity(Gravity.CENTER);
+        tbrow.addView(t2v);
+        TextView t3v = new TextView(this);
+        t3v.setText(list.get(i+1));
+        t3v.setTextColor(Color.WHITE);
+        t3v.setGravity(Gravity.CENTER);
+        tbrow.addView(t3v);
+        TextView t4v = new TextView(this);
+        t4v.setText(list.get(i+2));
+        t4v.setTextColor(Color.WHITE);
+        t4v.setGravity(Gravity.CENTER);
+        tbrow.addView(t4v);
+        stk.addView(tbrow);
+        tbrow.setBackgroundResource(R.drawable.row_border);
     }
 
 }
+
+
 private void signingOut(){
     Intent i=new Intent(getApplicationContext(),LoginActivity.class);
     startActivity(i);

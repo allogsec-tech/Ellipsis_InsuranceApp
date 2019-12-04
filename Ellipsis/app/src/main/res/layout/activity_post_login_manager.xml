@@ -6,160 +6,213 @@
     android:layout_height="match_parent"
     tools:context=".activities.PostLoginManager">
 
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="CUSTOMER DETAILS"-->
+<!--        android:textColor="#000"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:layout_editor_absoluteX="16dp" />-->
+
+<!--    <TableLayout-->
+<!--        android:id="@+id/table"-->
+<!--        android:layout_width="306dp"-->
+<!--        android:layout_height="540dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:stretchColumns="*"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.495"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView"-->
+<!--        app:layout_constraintVertical_bias="0.182">-->
+
+<!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:gravity="center_horizontal"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text="CUSTOMER DETAILS"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textColor="#000"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textSize="20dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textStyle="bold" />&ndash;&gt;-->
+
+
+<!--        <TableRow-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="1dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:background="#000000">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Application ID"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Name"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_column="2"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Document"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </TableRow>-->
+
+<!--        <TableRow-->
+<!--            android:id="@+id/tableRow1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="1dp"-->
+<!--            android:background="#000000">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtApplicationID1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtName1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/Document1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp" />-->
+<!--        </TableRow>-->
+
+<!--        <TableRow-->
+<!--            android:id="@+id/tableRow2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="1dp"-->
+<!--            android:background="#000000">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtApplicationID2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtName2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/Document2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15dp" />-->
+<!--        </TableRow>-->
+
+<!--    </TableLayout>-->
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="CUSTOMER DETAILS"
-        android:textColor="#000"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="ELLIPSIS"
+        android:textSize="30dp"
+        android:paddingTop="40dp"/>
 
-    <TableLayout
-        android:id="@+id/table"
-        android:layout_width="306dp"
-        android:layout_height="540dp"
-        android:orientation="vertical"
-        android:stretchColumns="*"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1"></TextView>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="#3d455b"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.182">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
-        <!--        <TextView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:gravity="center_horizontal"-->
-        <!--            android:text="CUSTOMER DETAILS"-->
-        <!--            android:textColor="#000"-->
-        <!--            android:textSize="20dp"-->
-        <!--            android:textStyle="bold" />-->
+        <HorizontalScrollView
+            android:id="@+id/hscrll1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
+            <RelativeLayout
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="1dp"
-            android:layout_marginTop="15dp"
-            android:background="#000000">
+                <TableLayout
+                    android:id="@+id/table_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"></TableLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="Application ID"
-                android:textColor="#000"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="Name"
-                android:textColor="#000"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="Document"
-                android:textColor="#000"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="1dp"
-            android:background="#000000">
-
-            <TextView
-                android:id="@+id/txtApplicationID1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/txtName1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/Document1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="15dp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="1dp"
-            android:background="#000000">
-
-            <TextView
-                android:id="@+id/txtApplicationID2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/txtName2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/Document2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="15dp" />
-        </TableRow>
-
-    </TableLayout>
+            </RelativeLayout>
+        </HorizontalScrollView>
+    </ScrollView>
 
     <Button
         android:id="@+id/signOut"
@@ -170,7 +223,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/table"
+
         app:layout_constraintVertical_bias="0.245" />
+
 
 </android.support.constraint.ConstraintLayout>
